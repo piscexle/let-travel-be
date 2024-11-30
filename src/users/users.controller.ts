@@ -15,8 +15,8 @@ export class UsersController {
 
   @UseGuards(JwtAuthGuard)
   @Get(':email')
-  findOne(@Param('email') email: string): Promise<User> {
-    return this.usersService.findOneByUsername(email);
+  findOne(@Param('email') email: string): Promise<User | null> {
+    return this.usersService.findOneByEmail(email);
   }
 
   @UseGuards(JwtAuthGuard)

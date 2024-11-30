@@ -13,11 +13,8 @@ export class UsersService {
     return this.userModel.find().exec();
   }
 
-  async findOneByUsername(email: string): Promise<User> {
-    return this.userModel.findOne({ email }).exec();
-  }
 
-  async findOneByEmail(email: string): Promise<User> {
+  async findOneByEmail(email: string): Promise<User | null> {
     return this.userModel.findOne({ email }).exec();
   }
 
